@@ -1,4 +1,4 @@
 import tweepy
-import pandas
+import pandas as pd
 
 

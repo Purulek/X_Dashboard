@@ -1,15 +1,15 @@
 import tweepy
 import pandas as pd
 
-key = 'nTlzKclTzEu56wnYZnq6Ijzcv'
+key = 'xxxxxv'
 
-secret_key = 'N3XCBQXQzlilzeTn2LeTma34SgvdC9K54WlIErrdqIkdetaPif'
+secret_key = 'xxxxxx'
 
-Bearer_Token = 'AAAAAAAAAAAAAAAAAAAAAIbLxAEAAAAAMqix%2BpC%2BULsYtuctm%2F8gdpquj18%3DdtSFlClrLSMoHKr3ZVtdcfUKp8ku22S7DT6Q3pgqU5V1sa1svI'
+Bearer_Token = 'xxxxxx'
 
-acess_token = '1861526408008474626-oZMfhfAFrXN1AlvVCnl0ToT013dvFZ'
+acess_token = 'xxxxx'
 
-secert_token = 'idHyhURsZUUOJY6C1LNgKGOr78VetYcpz0qukCapLpqtb'
+secert_token = 'xxxxxx'
 
 
 client = tweepy.Client(bearer_token=Bearer_Token)

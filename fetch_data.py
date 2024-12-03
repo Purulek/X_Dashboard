@@ -1,15 +1,15 @@
 import tweepy
 import pandas as pd
 
-key = 'xxxxxv'
+key = 'xxxxx'
 
-secret_key = 'xxxxxx'
+secret_key = 'xxxxx'
 
-Bearer_Token = 'xxxxxx'
+Bearer_Token = 'xxxxx'
 
 acess_token = 'xxxxx'
 
-secert_token = 'xxxxxx'
+secert_token = 'xxxx'
 
 
 client = tweepy.Client(bearer_token=Bearer_Token)
@@ -20,7 +20,7 @@ def configure_api(api_key, api_secret, access_token, access_token_secret):
     api = tweepy.API(auth, wait_on_rate_limit=True)
     return api
 
-def fetch_tweets(query, max_results=10):
+def fetch_tweets(query, max_results=1):
     response = client.search_recent_tweets(query=query, tweet_fields=['created_at', 'public_metrics'], max_results=max_results)
     tweets = response.data
     if not tweets:
@@ -32,8 +32,9 @@ def fetch_tweets(query, max_results=10):
         "retweets": tweet.public_metrics['retweet_count'],
         "likes": tweet.public_metrics['like_count']
     } for tweet in tweets]
-    return pd.DataFrame(data)
-
+    pd.DataFrame(data)
+    data.set_index(inplace = True)
+    return (data)
 
 
 

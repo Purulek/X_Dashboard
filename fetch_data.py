@@ -35,7 +35,7 @@ def fetch_tweets(query, max_results=1):
     pd.DataFrame(data)
     data.set_index(inplace = True)
     with open ('daata.csv', 'w', 'UTF=8') as File:
-        pass
+        File.write(data)
     return (data)
 
 

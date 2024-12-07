@@ -36,10 +36,9 @@ def fetch_tweets(query, max_results=1):
     data.set_index(inplace = True)
     with open ('daata.csv', 'w', 'UTF=8') as File:
         File.write(data)
-    return (data)
+    
 
 
 
 
 test2 = fetch_tweets(query='#AI')
-print(test2)

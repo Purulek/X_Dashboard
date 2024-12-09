@@ -1,22 +1,13 @@
 import tweepy
 import pandas as pd
 
-key = 'xxxxx'
-
-secret_key = 'xxxxx'
-
-Bearer_Token = 'xxxxx'
-
-acess_token = 'xxxxx'
-
-secert_token = 'xxxx'
-
+Bearer_Token = ''
 
 client = tweepy.Client(bearer_token=Bearer_Token)
 
 
 
-def fetch_tweets(query, max_results=1):
+def fetch_tweets(query, max_results=10):
     response = client.search_recent_tweets(query=query, tweet_fields=['created_at', 'public_metrics'], max_results=max_results)
     tweets = response.data
     if not tweets:
@@ -30,7 +21,7 @@ def fetch_tweets(query, max_results=1):
     } for tweet in tweets]
     pd.DataFrame(data)
     data.set_index(inplace = True)
-    with open ('daata.csv', 'w', 'UTF=8') as File:
+    with open ('daata.txt', 'w', 'UTF=8') as File:
         File.write(data)
     
 
